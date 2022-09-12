@@ -1,20 +1,16 @@
-import { styled } from "@mui/material/styles";
-import { Stack } from "@mui/material";
-import Navbar from "./components/Navbar";
+import { Stack, styled } from '@mui/material';
+import { Outlet } from 'react-router-dom';
+import Navbar from 'common/components/Navbar';
 
 const MainStyle = styled('div')(() => ({
   overflow: 'auto',
   minHeight: '95vh'
 }))
 
-export interface IMainLayoutProps {
-  children: React.ReactNode
-}
-
-const MainLayout: React.FC<IMainLayoutProps> = ({children}) => {
+const MainLayout: React.FC = () => {
   return (
     <Stack>
-      <MainStyle>{children}</MainStyle>
+      <MainStyle><Outlet /></MainStyle>
       <Navbar />
     </Stack>
   )

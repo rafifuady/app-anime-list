@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
