@@ -14,6 +14,9 @@ import AppRoutes from "routes/AppRoutes";
 
 const clientSideEmotionCache =  createEmotionCache();
 
+
+// https://colorhunt.co/palette/f0ebe3e4dccf7d9d9c576f72
+
 function App({ emotionCache = clientSideEmotionCache }) {
   return (
     <>

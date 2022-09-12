@@ -7,12 +7,16 @@ const MainStyle = styled('div')(() => ({
   minHeight: '95vh'
 }))
 
+const ColoredStack = styled(Stack)(({theme}) => ({
+  backgroundColor: '#F0EBE3'
+}))
+
 const MainLayout: React.FC = () => {
   return (
-    <Stack>
+    <ColoredStack>
       <MainStyle><Outlet /></MainStyle>
       <Navbar />
-    </Stack>
+    </ColoredStack>
   )
 }
 

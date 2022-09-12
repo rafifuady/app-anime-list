@@ -1,6 +1,11 @@
 import { useState } from 'react'
-import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction, Paper, styled } from '@mui/material';
 import { NavLink, useLocation } from 'react-router-dom';
+
+const StyledBottomNavigation = styled(BottomNavigation)(({theme}) => ({
+  color: theme.palette.getContrastText('#E4DCCF'),
+  backgroundColor: '#E4DCCF'
+}))
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
@@ -8,10 +13,10 @@ const Navbar: React.FC = () => {
 
   return (
     <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
-      <BottomNavigation showLabels value={value} onChange={(_, newValue) => setValue(newValue)}>
+      <StyledBottomNavigation showLabels value={value} onChange={(_, newValue) => setValue(newValue)}>
         <BottomNavigationAction label='AnimeList' value='' component={NavLink} to='/' />
         <BottomNavigationAction label='Collection' value='collection' component={NavLink} to='/collection' />
-      </BottomNavigation>
+      </StyledBottomNavigation>
     </Paper>
   )
 }
